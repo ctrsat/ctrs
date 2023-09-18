@@ -1,36 +1,20 @@
-// Получаем элементы видеоплеера и видеофайлов
-var videoPlayer = document.getElementById("video-player");
-var videoSources = [
-  "video/1.mp4",
-  "video/2.mp4",
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+  const videoPlayer = document.getElementById('video-player');
 
-];
-var currentVideoIndex = 0;
-
-// Функция для воспроизведения следующего видео
-function playNextVideo() {
-  currentVideoIndex++;
-  if (currentVideoIndex >= videoSources.length) {
-    currentVideoIndex = 0;
+  // Функция для запроса полноэкранного режима
+  function openFullscreen(element) {
+    if (element.requestFullscreen) {
+      element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+      element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+      element.msRequestFullscreen();
+    }
   }
-  videoPlayer.src = videoSources[currentVideoIndex];
-  videoPlayer.load();
-  videoPlayer.play();
-}
 
-// Начинаем воспроизведение первого видео
-videoPlayer.src = videoSources[currentVideoIndex];
-videoPlayer.load();
-videoPlayer.play();
-
-// Слушаем событие окончания воспроизведения и переключаемся на следующее видео
-videoPlayer.addEventListener("ended", function () {
-  // Задержка перед переключением на следующее видео (в миллисекундах)
-  var delay = 1; // Например, 2 секунды
-
-  setTimeout(function () {
-    playNextVideo();
-  }, delay);
+  // Открываем полноэкранный режим при загрузке страницы
+  openFullscreen(videoPlayer);
 });
-
-

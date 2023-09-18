@@ -2,43 +2,33 @@
 <html>
 <head>
   <title>Проигрыватель Видео</title>
-  <link rel="icon" type="image/x-icon" href="fon/citrus.png">
-  <!-- Подключение внешнего CSS-файла для стилизации -->
-  <link rel="stylesheet" type="text/css" href="css/css.css">
-  <!-- Мета-тег для адаптивности страницы на мобильных устройствах -->
+       <link rel="icon" type="image/x-icon" href="fon/citrus.png">
+
+
+        	  <!-- css-файл -->
+      <link rel="stylesheet" type="text/css" href="css/css.css">
+
+  <!-- Фоновое видео -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    /* Стили для блока ctrs-content */
-    #ctrs-content {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 300px;
-      height: 100%;
-      z-index: 9999; /* Устанавливаем высокий z-index, чтобы вывести блок на передний план */
-      background-color: white; /* Опционально: задаем фоновый цвет */
-      overflow: auto; /* Добавляем скролл, если содержимое слишком большое */
-    }
-  </style>
+  
 </head>
 <body>
   <!-- Фоновое видео -->
   <video autoplay muted loop id="myVideo">
     <source src="fon/uk.mp4" type="video/mp4">
-    <!-- Текст, который будет отображаться, если браузер не поддерживает воспроизведение видео -->
     Ваш браузер не поддерживает воспроизведение видео.
   </video>
   
   <!-- Пока не работает -->
-  <!--
   <div class="content">
     <p>пауза.</p>
     <button id="myBtn" onclick="myFunction()">Pause</button>
   </div>
-  -->
-  
-  <!-- Сам проигрыватель видео -->
-  <video id="video-player" width="800" autoplay muted controls playsinline>
+
+ 
+
+ <!-- Сам проигрыватель видео -->
+  <video id="video-player" width="800" autoplay muted controls loop playsinline>
     <source src="video/1.mp4" type="video/mp4">
     <source src="video/2.mp4" type="video/mp4">
     <source src="video/3.mp4" type="video/mp4">
@@ -47,18 +37,13 @@
     <source src="video/video.mp4" type="video/mp4">
     <source src="video/demo.mp4" type="video/mp4">
     <source src="video/ctrs.mp4" type="video/mp4">
+    <source src="video/ctrs.mp4" type="video/mp4">
+   
+	Ваш браузер не поддерживает воспроизведение видео.
   </video>
 
-  <!-- Подключение JavaScript-файла для управления видеоплеером -->
+  <!-- JavaScript-файл -->
   <script src="java/script.js"></script>
-  
-  <!-- Блок с содержимым сайта ctrs.com.ua -->
-  <div id="ctrs-content">
-    <?php
-    // Используем PHP для динамической загрузки содержимого
-    $ctrsContent = file_get_contents('ctrs_proxy.php');
-    echo $ctrsContent;
-    ?>
-  </div>
+
 </body>
 </html>
