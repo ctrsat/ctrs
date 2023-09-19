@@ -2,33 +2,58 @@
 <html>
 <head>
   <title>Проигрыватель Видео</title>
-       <link rel="icon" type="image/x-icon" href="fon/citrus.png">
+   
+   <!-- Шапка -->
+   <header>
+    <div class="header-container">
+      <!-- Логотип -->
+     <div class="logo">
+  <a href="https://www.ctrs.com.ua/" target="_blank"> 
+    <span>Ц</span> 
+  </a>
+</div>
+      <!-- Кнопки -->
+      <div class="buttons">
+        <button class="test-button" onclick="window.open('https://webcammictest.com/ru/', '_blank')">Тест Вебкамеры</button>
+        <button class="test-button" onclick="window.open('https://webcammictest.com/ru/check-mic.html', '_blank')">Тест Микрофона</button>
+        <button class="test-button" onclick="window.open('https://deadpixeltest.org/ru', '_blank')">Тест экрана</button>
+        <button class="test-button" onclick="window.open('https://keytest.pp.ua/', '_blank')">Тест Клавиатуры</button>
+        <button class="test-button" onclick="window.open('https://www.youtube.com/watch?v=hL6TEl0ga0s&ab_channel=Musicbang', '_blank')">YouTube</button>
+	    <button class="login-button" onclick="window.location.href='login.html'">Логин</button>
 
-
-        	  <!-- css-файл -->
-      <link rel="stylesheet" type="text/css" href="css/css.css">
-
-  <!-- Фоновое видео -->
+      </div>
+    </div>
+  </header>
+ 
+ <link rel="icon" type="image/x-icon" href="fon/citrus.png">
+  <!--CSS-файла для стилизации -->
+  <link rel="stylesheet" type="text/css" href="css/css.css">
+  <!-- Ну эта штука в теории подгоняет сайт под мобилки  -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
 </head>
 <body>
+<!-- 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 -->
+ 
+ <!-- Переход на CTRS -->
+  <a href="https://www.ctrs.com.ua/" target="_blank" id="site-link"></a>
+  
   <!-- Фоновое видео -->
   <video autoplay muted loop id="myVideo">
     <source src="fon/uk.mp4" type="video/mp4">
+    <!-- Текст, который будет отображаться. -->
     Ваш браузер не поддерживает воспроизведение видео.
   </video>
   
   <!-- Пока не работает -->
+  <!--
   <div class="content">
     <p>пауза.</p>
     <button id="myBtn" onclick="myFunction()">Pause</button>
   </div>
-
- 
-
- <!-- Сам проигрыватель видео -->
-  <video id="video-player" width="800" autoplay muted controls loop playsinline>
+  -->
+  
+  <!-- Сам проигрыватель видео -->
+  <video id="video-player" width="1000" autoplay muted controls playsinline>
     <source src="video/1.mp4" type="video/mp4">
     <source src="video/2.mp4" type="video/mp4">
     <source src="video/3.mp4" type="video/mp4">
@@ -37,13 +62,15 @@
     <source src="video/video.mp4" type="video/mp4">
     <source src="video/demo.mp4" type="video/mp4">
     <source src="video/ctrs.mp4" type="video/mp4">
-    <source src="video/ctrs.mp4" type="video/mp4">
-   
-	Ваш браузер не поддерживает воспроизведение видео.
   </video>
 
-  <!-- JavaScript-файл -->
+  <!-- JavaScript-файла для управления видеоплеером -->
   <script src="java/script.js"></script>
 
+<!-- Проигрыватель радио -->
+<h2 id="radio-title">Cirus Radio</h2>
+<audio id="radio-player" controls>
+  <source src="http://stream.brandradionetworks.com:8000/citrus" type="audio/mpeg">
+</audio>
 </body>
 </html>

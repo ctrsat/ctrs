@@ -29,29 +29,80 @@ body {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-  z-index: 1;
+  z-index: 0; 
 }
 
-.content {
-  position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
+#radio-player {
+  position: fixed; 
+  bottom: 0; 
+  width: 100%; 
+  background-color: rgba(255, 165, 0, 0.5); 
+  padding: 10px; 
+  z-index: 10; 
 }
 
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
+#radio-title {
+  position: absolute;
+  bottom: 33px; 
+  left:0px;
+  background-color: rgba(255, 165, 0, 0.5); 
+  padding:1px;
+  border-radius: 2px; 
+  z-index: 2;
+  width: 100%; 
+}
+
+header {
+  background-color: #333;
   color: #fff;
+  padding: 10px 0;
+  z-index: 99;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+.logo span {
+  background-color: #FFA500;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.test-button,
+.login-button {
+  background-color: #FFA500;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
+.login-button {
+  background-color: #333;
+  color: #fff;
+}
+/* Стили для ссылки внутри логотипа */
+.logo a {
+  text-decoration: none; 
+  color: inherit; /* Наследуем цвет текста от родительского элемента (.logo) */
 }
